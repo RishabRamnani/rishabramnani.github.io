@@ -5,7 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Rishab Ramnani | Personal Website</title>
-  <meta name="description" content="Official personal website of Rishab Ramnani. Connect via Instagram, WhatsApp, Call or Email." />
+  <meta name="description" content="Official personal website of Rishab Ramnani. Personal brand, contact links, and profile." />
+
+  <!-- Open Graph / Social Preview -->
+  <meta property="og:title" content="Rishab Ramnani" />
+  <meta property="og:description" content="Official personal website of Rishab Ramnani" />
+  <meta property="og:type" content="website" />
+
+  <!-- RR Favicon -->
+  <link rel="icon" href="data:image/svg+xml,
+  <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>
+    <rect width='100' height='100' rx='20' fill='%23c9a24d'/>
+    <text x='50%' y='60%' text-anchor='middle' font-size='46' fill='white' font-family='Arial' font-weight='bold'>RR</text>
+  </svg>">
 
   <style>
     * {
@@ -30,8 +42,8 @@
       position: fixed;
       top: 50%;
       left: 50%;
-      width: 500px;
-      height: 500px;
+      width: 540px;
+      height: 540px;
       background: radial-gradient(
         circle,
         rgba(241, 211, 138, 0.45),
@@ -39,40 +51,36 @@
         transparent 70%
       );
       transform: translate(-50%, -50%);
-      filter: blur(80px);
+      filter: blur(100px);
       z-index: -1;
-      animation: glowMove 8s ease-in-out infinite alternate;
+      animation: glowMove 10s ease-in-out infinite alternate;
     }
 
     @keyframes glowMove {
-      from {
-        transform: translate(-50%, -50%) scale(1);
-      }
-      to {
-        transform: translate(-48%, -52%) scale(1.15);
-      }
+      from { transform: translate(-50%, -50%) scale(1); }
+      to { transform: translate(-47%, -53%) scale(1.2); }
     }
 
     .card {
       position: relative;
-      background: rgba(255, 255, 255, 0.75);
-      backdrop-filter: blur(16px);
-      border-radius: 28px;
-      padding: 36px 28px;
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(18px);
+      border-radius: 30px;
+      padding: 40px 28px;
       width: 100%;
       max-width: 380px;
       text-align: center;
-      box-shadow: 0 25px 50px rgba(0,0,0,0.15);
-      animation: fadeIn 0.8s ease;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+      animation: fadeIn 0.9s ease;
       transition: background 0.4s ease, color 0.4s ease;
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
+      from { opacity: 0; transform: translateY(25px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* Dark / Light Toggle */
+    /* Toggle */
     .mode-toggle {
       position: absolute;
       top: 16px;
@@ -80,170 +88,166 @@
       background: rgba(0,0,0,0.08);
       border: none;
       border-radius: 50%;
-      width: 42px;
-      height: 42px;
+      width: 44px;
+      height: 44px;
       font-size: 18px;
       cursor: pointer;
-      transition: all 0.3s ease;
+      transition: transform 0.3s ease;
     }
 
-    .mode-toggle:hover {
-      transform: scale(1.1);
-    }
+    .mode-toggle:hover { transform: scale(1.1); }
 
     /* RR Logo */
     .rr-logo {
-      width: 110px;
-      height: 110px;
+      width: 116px;
+      height: 116px;
       border-radius: 50%;
-      margin: 0 auto 16px;
+      margin: 0 auto 18px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 36px;
+      font-size: 40px;
       font-weight: 600;
       letter-spacing: 2px;
       color: #fff;
       background: linear-gradient(135deg, #c9a24d, #f1d38a);
-      box-shadow: 0 12px 28px rgba(0,0,0,0.3);
+      box-shadow: 0 16px 34px rgba(0,0,0,0.35);
     }
 
     h1 {
       font-size: 24px;
-      color: #2b2b2b;
       margin-bottom: 6px;
+      color: #2b2b2b;
     }
 
     .subtitle {
       font-size: 14px;
       color: #666;
-      margin-bottom: 18px;
+      margin-bottom: 14px;
+    }
+
+    .info {
+      font-size: 13px;
+      background: rgba(201,162,77,0.18);
+      padding: 8px 12px;
+      border-radius: 12px;
+      display: inline-block;
+      margin-bottom: 16px;
     }
 
     .bio {
       font-size: 14px;
-      color: #444;
       line-height: 1.6;
+      color: #444;
       margin-bottom: 26px;
     }
 
     .btn {
       display: block;
-      text-decoration: none;
       padding: 14px;
       border-radius: 14px;
       margin: 10px 0;
+      text-decoration: none;
       font-weight: 500;
-      transition: all 0.25s ease;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      cursor: pointer;
     }
 
     .btn:hover {
       transform: translateY(-3px);
-      box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+      box-shadow: 0 14px 28px rgba(0,0,0,0.18);
     }
 
-    .insta {
-      background: linear-gradient(135deg, #f58529, #dd2a7b, #8134af);
-      color: white;
-    }
-
-    .whatsapp {
-      background: #25d366;
-      color: white;
-    }
-
-    .call {
-      background: #111;
-      color: #f1d38a;
-    }
-
-    .email {
-      background: #444;
-      color: white;
-    }
+    .insta { background: linear-gradient(135deg,#f58529,#dd2a7b,#8134af); color:white; }
+    .whatsapp { background:#25d366; color:white; }
+    .call { background:#111; color:#f1d38a; }
+    .email { background:#444; color:white; }
+    .copy { background:#c9a24d; color:white; }
 
     footer {
-      margin-top: 20px;
+      margin-top: 22px;
       font-size: 12px;
       color: #777;
     }
 
-    /* DARK MODE */
+    /* Dark Mode */
     body.dark {
       background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
     }
 
-    body.dark .card {
-      background: rgba(30, 30, 30, 0.75);
-      color: #f5f5f5;
-    }
-
-    body.dark h1 {
-      color: #f1d38a;
-    }
-
+    body.dark .card { background: rgba(30,30,30,0.8); }
+    body.dark h1 { color:#f1d38a; }
     body.dark .subtitle,
     body.dark .bio,
-    body.dark footer {
-      color: #ccc;
-    }
-
-    body.dark .call {
-      background: #f1d38a;
-      color: #111;
-    }
-
-    body.dark .mode-toggle {
-      background: rgba(255,255,255,0.15);
-    }
+    body.dark footer { color:#ccc; }
+    body.dark .call { background:#f1d38a; color:#111; }
   </style>
 </head>
 <body>
 
   <div class="glow"></div>
 
-  <div class="card">
-    <button class="mode-toggle" onclick="toggleMode()">🌙</button>
+  <div class="card" role="main">
+    <button class="mode-toggle" onclick="toggleMode()" aria-label="Toggle Dark Mode">🌙</button>
 
     <div class="rr-logo">RR</div>
 
     <h1>Rishab Ramnani</h1>
     <div class="subtitle">Personal Website</div>
 
+    <div class="info" id="ageInfo"></div>
+
     <div class="bio">
-      Hi, I’m <strong>Rishab Ramnani</strong>.<br><br>
-      I’m passionate about building ideas, learning new things, and creating a strong personal brand.
-      This space is where I share who I am and how you can connect with me.<br><br>
-      🎂 <strong>Date of Birth:</strong> 19 July 2000<br><br>
+      Passionate about building ideas, learning continuously,
+      and creating a strong personal brand.<br><br>
       Always exploring • Always improving ✨
     </div>
 
-    <a class="btn insta" href="https://instagram.com/rishab.r19" target="_blank">
-      📸 Instagram
-    </a>
+    <a class="btn insta" href="https://instagram.com/rishab.r19" target="_blank">📸 Instagram</a>
+    <a class="btn whatsapp" href="https://wa.me/917995588230" target="_blank">💬 WhatsApp</a>
+    <a class="btn call" href="tel:+917995588230">📞 Call Me</a>
+    <a class="btn email" href="mailto:ramnanirishab@gmail.com">✉️ Email Me</a>
+    <div class="btn copy" onclick="copyContact()">📋 Copy Contact</div>
 
-    <a class="btn whatsapp" href="https://wa.me/917995588230" target="_blank">
-      💬 WhatsApp
-    </a>
-
-    <a class="btn call" href="tel:+917995588230">
-      📞 phone
-    </a>
-
-    <a class="btn email" href="mailto:ramnanirishab@gmail.com">
-      ✉️ Email 
-    </a>
-
-    <footer>
-      © 2026 Rishab Ramnani
-    </footer>
+    <footer>© 2026 Rishab Ramnani</footer>
   </div>
 
   <script>
+    /* Theme Persistence */
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") document.body.classList.add("dark");
+
     function toggleMode() {
       document.body.classList.toggle("dark");
-      const btn = document.querySelector(".mode-toggle");
-      btn.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
+      localStorage.setItem("theme",
+        document.body.classList.contains("dark") ? "dark" : "light"
+      );
+      document.querySelector(".mode-toggle").textContent =
+        document.body.classList.contains("dark") ? "☀️" : "🌙";
+    }
+
+    /* Age & Birthday */
+    const dob = new Date("2000-07-19");
+    const today = new Date();
+    let age = today.getFullYear() - dob.getFullYear();
+    if (
+      today.getMonth() < dob.getMonth() ||
+      (today.getMonth() === dob.getMonth() && today.getDate() < dob.getDate())
+    ) age--;
+
+    const birthday =
+      today.getDate() === 19 && today.getMonth() === 6;
+
+    document.getElementById("ageInfo").innerHTML =
+      (birthday ? "🎉 Happy Birthday! " : "🎂 ") +
+      "Born: 19 July 2000 • Age: " + age;
+
+    /* Copy Contact */
+    function copyContact() {
+      navigator.clipboard.writeText(
+        "Rishab Ramnani | +91 7995588230 | ramnanirishab@gmail.com"
+      );
+      alert("Contact copied!");
     }
   </script>
 

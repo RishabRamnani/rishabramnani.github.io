@@ -4,10 +4,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rishab Ramnani</title>
 
-  <!-- Google verification (we’ll update later) -->
-  <!-- <meta name="google-site-verification" content="XXXX" /> -->
+  <title>Rishab Ramnani | Personal Website</title>
+  <meta name="description" content="Official personal website of Rishab Ramnani. Connect on Instagram, WhatsApp or Call directly." />
 
   <style>
     * {
@@ -23,43 +22,104 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      padding: 20px;
+      transition: background 0.4s ease;
+    }
+
+    /* Animated Glow */
+    .glow {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(
+        circle,
+        rgba(241, 211, 138, 0.45),
+        rgba(201, 162, 77, 0.15),
+        transparent 70%
+      );
+      transform: translate(-50%, -50%);
+      filter: blur(80px);
+      z-index: -1;
+      animation: glowMove 8s ease-in-out infinite alternate;
+    }
+
+    @keyframes glowMove {
+      from {
+        transform: translate(-50%, -50%) scale(1);
+      }
+      to {
+        transform: translate(-48%, -52%) scale(1.15);
+      }
     }
 
     .card {
-      background: rgba(255, 255, 255, 0.65);
-      backdrop-filter: blur(14px);
-      border-radius: 24px;
-      padding: 32px 26px;
-      width: 90%;
-      max-width: 360px;
+      position: relative;
+      background: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(16px);
+      border-radius: 28px;
+      padding: 36px 28px;
+      width: 100%;
+      max-width: 380px;
       text-align: center;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+      animation: fadeIn 0.8s ease;
+      transition: background 0.4s ease, color 0.4s ease;
     }
 
-    .avatar {
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Dark / Light Toggle */
+    .mode-toggle {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: rgba(0,0,0,0.08);
+      border: none;
+      border-radius: 50%;
+      width: 42px;
+      height: 42px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .mode-toggle:hover {
+      transform: scale(1.1);
+    }
+
+    /* Profile Image */
+    .avatar-img {
       width: 110px;
       height: 110px;
       border-radius: 50%;
-      background: linear-gradient(135deg, #c9a24d, #f1d38a);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 40px;
-      font-weight: 600;
-      color: white;
+      object-fit: cover;
       margin: 0 auto 16px;
+      display: block;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
     }
 
     h1 {
-      font-size: 22px;
+      font-size: 24px;
       color: #2b2b2b;
       margin-bottom: 6px;
     }
 
-    p {
+    .subtitle {
       font-size: 14px;
-      color: #555;
-      margin-bottom: 20px;
+      color: #666;
+      margin-bottom: 18px;
+    }
+
+    .bio {
+      font-size: 14px;
+      color: #444;
+      line-height: 1.6;
+      margin-bottom: 26px;
     }
 
     .btn {
@@ -69,16 +129,21 @@
       border-radius: 14px;
       margin: 10px 0;
       font-weight: 500;
-      transition: transform 0.2s, box-shadow 0.2s;
+      transition: all 0.25s ease;
     }
 
     .btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.15);
     }
 
     .insta {
       background: linear-gradient(135deg, #f58529, #dd2a7b, #8134af);
+      color: white;
+    }
+
+    .whatsapp {
+      background: #25d366;
       color: white;
     }
 
@@ -87,33 +152,98 @@
       color: #f1d38a;
     }
 
+    .email {
+      background: #444;
+      color: white;
+    }
+
     footer {
-      margin-top: 18px;
+      margin-top: 20px;
       font-size: 12px;
       color: #777;
+    }
+
+    /* DARK MODE */
+    body.dark {
+      background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+    }
+
+    body.dark .card {
+      background: rgba(30, 30, 30, 0.75);
+      color: #f5f5f5;
+    }
+
+    body.dark h1 {
+      color: #f1d38a;
+    }
+
+    body.dark .subtitle,
+    body.dark .bio,
+    body.dark footer {
+      color: #ccc;
+    }
+
+    body.dark .call {
+      background: #f1d38a;
+      color: #111;
+    }
+
+    body.dark .mode-toggle {
+      background: rgba(255,255,255,0.15);
     }
   </style>
 </head>
 <body>
 
+  <div class="glow"></div>
+
   <div class="card">
-    <div class="avatar">RR</div>
+    <button class="mode-toggle" onclick="toggleMode()">🌙</button>
+
+    <img 
+      src="https://i.imgur.com/6VBx3io.png"
+      alt="Rishab Ramnani"
+      class="avatar-img"
+    />
 
     <h1>Rishab Ramnani</h1>
-    <p>Personal Profile</p>
+    <div class="subtitle">Personal Website</div>
+
+    <div class="bio">
+      Hi, I’m <strong>Rishab Ramnani</strong>.<br><br>
+      I’m passionate about building ideas, learning new things, and creating a strong personal brand.
+      This space is where I share who I am and how you can connect with me.<br><br>
+      Always exploring • Always improving ✨
+    </div>
 
     <a class="btn insta" href="https://instagram.com/rishab.r19" target="_blank">
       📸 Instagram
+    </a>
+
+    <a class="btn whatsapp" href="https://wa.me/917995588230" target="_blank">
+      💬 WhatsApp
     </a>
 
     <a class="btn call" href="tel:+917995588230">
       📞 Call Me
     </a>
 
+    <a class="btn email" href="mailto:rishab@example.com">
+      ✉️ Email Me
+    </a>
+
     <footer>
       © 2026 Rishab Ramnani
     </footer>
   </div>
+
+  <script>
+    function toggleMode() {
+      document.body.classList.toggle("dark");
+      const btn = document.querySelector(".mode-toggle");
+      btn.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
+    }
+  </script>
 
 </body>
 </html>

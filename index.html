@@ -1,38 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rishab Ramnani | Home</title>
-
-<link rel="icon" href="data:image/svg+xml,
-<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>
-<rect width='100' height='100' rx='20' fill='%23c9a24d'/>
-<text x='50%' y='60%' text-anchor='middle' font-size='46' fill='white' font-weight='bold'>RR</text>
-</svg>">
-
-<style>
-body{margin:0;font-family:Poppins,Arial;background:linear-gradient(135deg,#f6f1eb,#efe6d8);display:flex;justify-content:center;align-items:center;height:100vh}
-.card{background:rgba(255,255,255,.85);padding:36px;border-radius:30px;text-align:center;width:360px;box-shadow:0 30px 60px rgba(0,0,0,.2)}
-.rr{width:110px;height:110px;border-radius:50%;background:linear-gradient(135deg,#c9a24d,#f1d38a);display:flex;align-items:center;justify-content:center;color:white;font-size:38px;font-weight:600;margin:0 auto 16px}
-a{display:block;margin:12px 0;padding:14px;border-radius:14px;text-decoration:none;font-weight:500}
-.nav a{background:#111;color:#f1d38a}
-.insta{background:#dd2a7b;color:white}
-</style>
-</head>
-
-<body>
-<div class="card">
-  <div class="rr">RR</div>
-  <h2>Rishab Ramnani</h2>
-  <p>Personal Website</p>
-
-  <div class="nav">
-    <a href="about.html">About Me</a>
-    <a href="contact.html">Contact</a>
-  </div>
-
-  <a class="insta" href="https://instagram.com/rishab.r19" target="_blank">Instagram</a>
-</div>
-</body>
-</html>
+/app/  
+├── backend/  
+│   └── server.py          # FastAPI backend (605 lines)  
+├── frontend/src/  
+│   ├── App.js             # Main app with routes  
+│   ├── App.css            # Custom styles  
+│   ├── index.css          # Tailwind + theme colors  
+│   ├── context/  
+│   │   ├── AuthContext.js # Auth state management  
+│   │   └── CartContext.js # Cart state management  
+│   ├── components/  
+│   │   ├── Navbar.js      # Navigation bar  
+│   │   ├── Footer.js      # Footer  
+│   │   └── ProductCard.js # Product card component  
+│   └── pages/  
+│       ├── HomePage.js         # Landing page  
+│       ├── ProductsPage.js     # Product listing  
+│       ├── ProductDetailPage.js # Single product  
+│       ├── CartPage.js         # Shopping cart  
+│       ├── CheckoutPage.js     # Checkout (COD)  
+│       ├── LoginPage.js        # User login  
+│       ├── RegisterPage.js     # User registration  
+│       ├── DashboardPage.js    # User orders  
+│       ├── AdminPage.js        # Admin panel  
+│       └── OrderSuccessPage.js # Order confirmation
